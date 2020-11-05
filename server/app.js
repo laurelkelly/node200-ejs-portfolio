@@ -17,11 +17,11 @@ app.set('views', './views');
 app.set('view engine', 'ejs');
 
 // Now instead of using res.send we can use res.render to send the output of the template by filename (* moved to routes.js)
-
 // app.get('/', (req, res) => {
 //     res.render('index');
 // });
 
+app.use(express.static(__dirname + '/public'));
 app.use('/', router);
 
 module.exports = app;

@@ -1,21 +1,47 @@
-<html>
-    <head>
-        <title>Contact Laurel</title>
-    </head>
-    <body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head'); %>
+</head>
+<body class="container">
+    <header>
+        <%- include('./partials/header'); %>    
+    </header>
+
+    <main>
+        <div class="jumbotron">
+            <h1>Contact Me</h1>
+        </div>
         <div>
             <form action="/thanks" method="POST">
-                <label for="firstName">First Name:</label>
-                <input id="firstName" name="firstName" type="text" />
-
-                <label for="lastName">Last Name:</label>
-                <input id="lastName" name="lastName" type="text" />
-
-                <label for="email">Email:</label>
-                <input id="email" name="email" type="text" />
-
-                <input type="submit" />
+                <div class="form-row">
+                    <div class="form-group col">
+                        <label for="firstName">First Name</label>
+                        <input class="form-control" id="firstName" name="firstName" type="text" />
+                    </div>
+                    <div class="form-group col">
+                        <label for="lastName">Last Name</label>
+                        <input class="form-control" id="lastName" name="lastName" type="text" />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col">
+                        <label for="email">Email</label>
+                        <input class="form-control" id="email" name="email" type="text" />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col">
+                        <label for="message">Message</label>
+                        <textarea class="form-control" id="message" name="message" type="textarea"></textarea>
+                    </div>
+                </div>
+                <button class="btn btn-primary" type="submit">Submit</button> 
             </form>
         </div>
-    </body>
+    </main>
+
+    <%- include('./partials/footer'); %>
+    
+</body>
 </html>
