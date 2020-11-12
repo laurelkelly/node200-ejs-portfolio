@@ -2,16 +2,53 @@
 <html lang="en">
 <head>
     <%- include('./partials/head'); %>
+    <link rel="stylesheet" href="/assets/index.css" type="text/css"/>
 </head>
-<body class="container">
+<body class="d-flex flex-column h-100">
 
     <header>
         <%- include('./partials/header'); %>
     </header>
 
-    <main>
-        <div class="jumbotron">
-            <h1>Projects</h1>
+    <main role="main" class="flex-shrink-0 mx-auto">
+        <section class="jumbotron text-center">
+            <div class="container">
+                <h1>Laurel Kelly</h1>
+                <h3 class="font-weight-light" style="color:#145771">Full Stack Developer</h3>
+                <img class="float-left headshot" src="/assets/images/laurel-kelly-headshot-under-1mb.JPG" alt="Laurel Kelly Headshot" height="120">
+                <p class="lead text-muted text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p class="font-italic">Click on an image to view the page. Click on the title to view the code.</p>
+            </div>
+        </section>
+
+        <div class="album py-5 bg-light">
+            <div class="container">
+        
+                <div class="row">
+                    <% projects.forEach(function(project) { %>
+                        <div class="col-md-6">
+                            <div class="card mb-4 shadow-sm">
+                                <a href="<%= project.heroku %>" target="_blank"><img src="<%= project.image %>" class="card-img-top" width="100%" height="225" preserveAspectRatio="xMidYMid slice" alt="Application thumbnail image"></a>
+                                <div class="card-body">
+                                    <h5 class="card-title"><a href="<%= project.github %>" target="_blank" class="card-title"><%= project.title %></a></h5>
+                                    <p class="card-text"><%= project.description %></p>
+                                </div>
+                            </div>
+                        </div>
+                    <% }); %>
+
+                    <!-- <div class="col-md-6">
+                        <div class="card mb-4 shadow-sm">
+                            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/></svg>
+                            <div class="card-body">
+                                <h5 class="card-title"><a href="#" target="_blank">App Title</a></h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </div>
+                        </div>
+                    </div> -->
+                
+                </div>
+            </div>
         </div>
     </main>
     

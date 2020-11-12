@@ -2,46 +2,99 @@
 <html lang="en">
 <head>
     <%- include('./partials/head'); %>
+    <link rel="stylesheet" href="/assets/contact.css" type="text/css"/>
 </head>
-<body class="container">
+<body class="d-flex flex-column h-100">
+
     <header>
         <%- include('./partials/header'); %>    
     </header>
 
-    <main>
-        <div class="jumbotron">
-            <h1>Contact Me</h1>
-        </div>
-        <div>
-            <form action="/thanks" method="POST">
-                <div class="form-row">
-                    <div class="form-group col">
-                        <label for="firstName">First Name</label>
-                        <input class="form-control" id="firstName" name="firstName" type="text" />
-                    </div>
-                    <div class="form-group col">
-                        <label for="lastName">Last Name</label>
-                        <input class="form-control" id="lastName" name="lastName" type="text" />
+    <main role="main" class="flex-shrink-0">
+            <div class="card mx-auto">
+                <div class="card-body">
+                    <h1 class="card-title text-center font-weight-bold">Contact Me</h1>
+                    <div class="card-text">
+                        <form action="/thanks" method="POST" name="contact-form" id="contact-form">
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="firstName">FIRST NAME</label>
+                                    <input class="form-control rounded-0" id="firstName" name="firstName" type="text"
+                                    required />
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="lastName">LAST NAME</label>
+                                    <input class="form-control rounded-0" id="lastName" name="lastName" type="text"
+                                    required />
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col">
+                                    <label for="email">EMAIL</label>
+                                    <input class="form-control rounded-0" id="email" name="email" type="email" aria-describedby="emailHelp"
+                                    required />
+                                    <!-- <small id="emailHelp" class="form-text text-muted">I'll never share your email with anyone else.</small> -->
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col">
+                                    <label for="message">MESSAGE</label>
+                                    <textarea rows="3" style="height:auto" class="form-control rounded-0" id="message" name="message" type="textarea" required ></textarea>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col text-center">
+                                    <button class="btn btn-primary font-weight-bold" type="submit" id="submit-form">Send Your Message</button> 
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
-                <div class="form-row">
-                    <div class="form-group col">
-                        <label for="email">Email</label>
-                        <input class="form-control" id="email" name="email" type="text" />
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col">
-                        <label for="message">Message</label>
-                        <textarea class="form-control" id="message" name="message" type="textarea"></textarea>
-                    </div>
-                </div>
-                <button class="btn btn-primary" type="submit">Submit</button> 
-            </form>
-        </div>
+            </div>
     </main>
 
-    <%- include('./partials/footer'); %>
+    <footer class="footer mt-auto py-3">
+        <%- include('./partials/footer'); %>
+    </footer>
+
+    <!-- <script>
+        const form = document.forms['contact-form']
+
+        form.addEventListener('submit', e => {
+            let firstName = document.getElementById('firstName').value;
+            let lastName = document.getElementById('lastName').value;
+            let email = document.getElementById('email').value;
+
+            let formData = {
+                firstName: firstName,
+                lastName: lastName,
+                email: email
+            }
+            //console.log(formData);
+
+          e.preventDefault()
+            fetch('/thanks', { 
+              method: 'POST', 
+              body: JSON.stringify(formData), 
+              headers: {
+                'Accept': 'application/json',
+                'content-type': 'application/json'
+                }, 
+            })
+            .then(response => {
+                console.log('Success!', response)
+                if (response.status == 404) {
+                    alert('Error: Your message could not be sent at this time. Please check the email address and try again.')
+                    res.redirect('back');
+                }
+            })
+            .catch(error => {
+                console.error('Error!', error)
+                alert('Error: Your message could not be sent at this time. Please check the email address and try again.')
+                res.redirect('back');
+            })
+        })
+    </script> -->
     
 </body>
 </html>

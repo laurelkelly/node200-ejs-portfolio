@@ -1,0 +1,39 @@
+.card {
+  width: 60%;
+  padding: 2rem;
+  margin: 1.75rem 0; 
+  border-radius: 10px;
+  border-style: none;
+  background-color: #F5F5F5;
+}
+
+.card-title {
+  color: #333333;
+  margin-bottom: 2rem;
+}
+
+.card-text {
+  font-size: .80rem;
+  color: #ADADAD;
+}
+
+input, textarea {
+  background-color: #F5F5F5!important;
+  border-top-style: none!important;
+  border-left-style: none!important;
+  border-right-style: none!important;
+  border-bottom: 2px solid #ADADAD!important;
+}
+
+.btn {
+  border-radius: 3px;
+  border-style: none;
+  margin-top: 2rem;
+  padding: .75rem 3rem;
+  background-color: #145771;
+}
+
+.btn:hover {
+  border-style: none;
+  background-color: #9DABB6;
+}

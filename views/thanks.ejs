@@ -3,32 +3,24 @@
 <head>
     <%- include('./partials/head'); %>
 </head>
-<body class="container">
+<body class="d-flex flex-column h-100">
 
     <header>
         <%- include('./partials/header'); %>
     </header>
 
-    <main>
-        <div class="jumbotron">
-            Thank you, <%= contact.firstName %> <%= contact.lastName %>.
+    <main role="main" class="flex-shrink-0">
+        <div class="container" style="height: 39rem">
+            <div class="jumbotron mx-auto text-center">
+                <h2>Thank you, <%= contact.firstName %> <%= contact.lastName %>.</h2> 
+                <h3>Your email has been sent!<h3>
+            </div>
         </div>
     </main>
     
-    <footer>
+    <footer class="footer mt-auto py-3">
         <%- include('./partials/footer'); %>
     </footer>
 
 </body>
-</html>
 
-<!-- <html>
-    <head>
-        <title>Laurel Thanks You</title>
-    </head>
-    <body>
-        <div>
-            Thank you, <%= contact.firstName %> <%= contact.lastName %>.
-        </div>
-    </body>
-</html> -->
