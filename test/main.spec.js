@@ -1,6 +1,6 @@
 /* global define, it, describe, beforeEach, document */
-const express = require('express');
-const path = require('path');
+//const express = require('express');
+//const path = require('path');
 const Nightmare = require('nightmare');
 const expect = require('chai').expect;
 const axios = require('axios');
